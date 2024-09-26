@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.purchased{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+    
+    width: 100%;
+    height: 100vh;
+
+}
+.whole{
+    border: 2px black;
+}
+.b{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2rem;
+    font-size: 2rem;
+
+}
+button{
+    font-size: 2rem;
+}

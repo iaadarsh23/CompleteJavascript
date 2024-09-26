@@ -22,4 +22,5 @@ bill= `hi ${str3} ${str4} and The total bill is $${(1+5+3)}`;
 console.log(bill);
 console.log( `thank you
 come again`)   
+console.log("lorem");
 
