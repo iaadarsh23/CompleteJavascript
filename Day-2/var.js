@@ -12,4 +12,17 @@
 
 //Project
 
-let showcount=0;
+// let showcount=0;
+// console.log(typeof showcount);
+
+//exercise
+
+const name= 'Adarsh tripathi';
+console.log(`My name is ${name}`);
+const cost= 5+6+9;
+const tax= cost*0.1;
+console.log(`Cost of food: ${cost} and the tax is ${tax}%`);
+
+
+
+

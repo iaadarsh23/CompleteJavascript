@@ -8,16 +8,23 @@
     <script src="var.js"></script>
 </head>
 <body>
-   <h1>Cart Quantity</h1>
+    <h1>Cart Quantity</h1>
    <button  onclick="console.log(`Cart Quantity: ${showcount}`)">Show Quantity</button>
-   <button onclick=" showcount=showcount+1;
+
+   <button onclick=" showcount+=1;
       console.log(`Cart Quantity: ${showcount}`) ">Add to Cart</button>
+
    <button onclick=" showcount=showcount+2
         console.log(`Cart Quantity: ${showcount}`)">+2</button>
+
    <button onclick=" showcount=showcount+3
         console.log(`Cart Quantity: ${showcount}`)"> +3</button>
-   <button onclick=" showcount=showcount-showcount;
-        console.log(`Reset; ${showcount}`)">Reset Card</button>
+
+   <button onclick=" showcount=0;
+        console.log(`Reset; ${showcount}`)">Reset Card</button> 
+
+
+
 
 </body>
 </html>
