@@ -3,84 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper scissor game</title>
+    <title>Rock Paper Scissors Game</title>
     <script src="if.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> ROCK  PAPER SCISSORS</h1>
+    <h1>ROCK PAPER SCISSORS</h1>
 
-    <button  
-        onclick=" 
-            const randomnumber = Math.floor(Math.random() * 3);
-            let computerchoice = '';
+    <!-- Wrapped the buttons in a div with class 'box' -->
+    <div class="box">
+        <button  
+            onclick=" 
+                const randomnumber = Math.floor(Math.random() * 3);
+                let computerchoice = '';
 
-            if (randomnumber === 0) {
-                computerchoice = 'Rock';   
-            } else if (randomnumber === 1) {
-                computerchoice = 'paper';
-            } else {
-                computerchoice = 'scissor';
-            }
+                if (randomnumber === 0) {
+                    computerchoice = 'Rock';   
+                } else if (randomnumber === 1) {
+                    computerchoice = 'paper';
+                } else {
+                    computerchoice = 'scissor';
+                }
 
-            let result = '';
-            if (computerchoice === 'Rock') {
-                result = 'tie';
-            } else if (computerchoice === 'paper') {
-                result = 'You lose';
-            } else {
-                result = 'You win';
-            }
-            alert(`You have picked Rock. Computer picked ${computerchoice}. ${result}`);
-        ">Rock</button>
+                let result = '';
+                if (computerchoice === 'Rock') {
+                    result = 'tie';
+                } else if (computerchoice === 'paper') {
+                    result = 'You lose';
+                } else {
+                    result = 'You win';
+                }
+                alert(`You have picked Rock. Computer picked ${computerchoice}. ${result}`);
+            ">
+            <img class="imgs" src="/images/fist.png" alt="Rock">
+        </button>
 
-    <button 
-        onclick="
-            const randomnumber = Math.floor(Math.random() * 3);
-            let computerchoice = '';
+        <button 
+            onclick="
+                const randomnumber = Math.floor(Math.random() * 3);
+                let computerchoice = '';
 
-            if (randomnumber === 0) {
-                computerchoice = 'Rock';   
-            } else if (randomnumber === 1) {
-                computerchoice = 'paper';
-            } else {
-                computerchoice = 'scissor';
-            }
+                if (randomnumber === 0) {
+                    computerchoice = 'Rock';   
+                } else if (randomnumber === 1) {
+                    computerchoice = 'paper';
+                } else {
+                    computerchoice = 'scissor';
+                }
 
-            let result = '';
-            if (computerchoice === 'Rock') {
-                result = 'You win';
-            } else if (computerchoice === 'paper') {
-                result = 'tie';
-            } else {
-                result = 'You lose';
-            }
-            alert(`You have picked paper. Computer picked ${computerchoice}. ${result}`);
-        ">Paper</button>
+                let result = '';
+                if (computerchoice === 'Rock') {
+                    result = 'You win';
+                } else if (computerchoice === 'paper') {
+                    result = 'tie';
+                } else {
+                    result = 'You lose';
+                }
+                alert(`You have picked paper. Computer picked ${computerchoice}. ${result}`);
+            ">
+            <img class="imgs" src="/images/hand-paper.png" alt="Paper">
+        </button>
 
-    <button 
-        onclick="
-            const randomnumber = Math.floor(Math.random() * 3);
-            let computerchoice = '';
+        <button 
+            onclick="
+                const randomnumber = Math.floor(Math.random() * 3);
+                let computerchoice = '';
 
-            if (randomnumber === 0) {
-                computerchoice = 'Rock';   
-            } else if (randomnumber === 1) {
-                computerchoice = 'paper';
-            } else {
-                computerchoice = 'scissor';
-            }
+                if (randomnumber === 0) {
+                    computerchoice = 'Rock';   
+                } else if (randomnumber === 1) {
+                    computerchoice = 'paper';
+                } else {
+                    computerchoice = 'scissor';
+                }
 
-            let result = '';
-            if (computerchoice === 'Rock') {
-                result = 'You lose';
-            } else if (computerchoice === 'paper') {
-                result = 'You win';
-            } else {
-                result = 'tie';
-            }
-            alert(`You have picked Scissors. Computer picked ${computerchoice}. ${result}`);
-        ">Scissors</button>
+                let result = '';
+                if (computerchoice === 'Rock') {
+                    result = 'You lose';
+                } else if (computerchoice === 'paper') {
+                    result = 'You win';
+                } else {
+                    result = 'tie';
+                }
+                alert(`You have picked Scissors. Computer picked ${computerchoice}. ${result}`);
+            ">
+            <img class="imgs" src="/images/scissors.png" alt="Scissors">
+        </button>
+    </div>
 
 </body>
 </html>
