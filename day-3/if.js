@@ -21,11 +21,32 @@
 //     console.log(`Good night ${name}`);   
 // }
 
-const age= 15;
-if(age<=6|| age>=65){
-    console.log("lele discount");
+
+//p4
+// const age= 15;
+// if(age<=6|| age>=65){
+//     console.log("lele discount");
     
-}else{
-    console.log('nhi dunga discount ja jo krna hai krle saade');
+// }else{
+//     console.log('nhi dunga discount ja jo krna hai krle saade');
     
-}
+// }
+
+//p5
+// const age= 500;
+// const holiday= false;
+// if((age<=6 || age>=65) && (holiday=== false)){
+//     console.log("lele discount");
+    
+// }else{
+//     console.log('nhi dunga discount ja jo krna hai krle saade');
+    
+// }
+
+//p6
+ 
+const randomnum= Math.random();
+const prob = randomnum<0.5 ? "heads": "tails"
+const guess = 'heads';
+const result= prob===guess ? "you win": "you loose";
+console.log(result);
