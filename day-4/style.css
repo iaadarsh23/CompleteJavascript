@@ -1,0 +1,21 @@
+.box {
+    font-size: 45px;
+    color: red;
+    display: flex;
+    
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+button {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 100%;
+    padding: 2rem;
+}
+.imgs{
+    width: 100px;
+    height: 100px;
+}   
