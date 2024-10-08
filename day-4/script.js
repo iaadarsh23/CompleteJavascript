@@ -10,9 +10,10 @@ function playgame(playermove){
                     } else {
                         result = 'You win';
                     }
-                    alert(`You have picked ${playermove}. Computer picked ${computerchoice}. ${result}`);
+                    alert(`You have picked ${playermove}. Computer picked hce}. ${result}`);
 
                 }
+
                 else if(playermove==='paper'){
                     if (computerchoice === 'Rock') {
                         result = 'You win';
@@ -23,6 +24,7 @@ function playgame(playermove){
                     }
                     alert(`You have picked ${playermove}. Computer picked ${computerchoice}. ${result}`);
                 }
+
                 else if(playermove==='scissor'){
                     if (computerchoice === 'Rock') {
                         result = 'You lose';
@@ -36,64 +38,6 @@ function playgame(playermove){
                 
             
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function pickcomputerchoice(){
     const randomnumber = Math.floor(Math.random() * 3);

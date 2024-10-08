@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Temperature Converter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        .cosmic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1522174531240-e30332a48f82?fit=crop&w=1920&h=1080') center/cover no-repeat;
+            filter: brightness(0.5);
+            transition: filter 0.5s ease;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            animation: pulse 2s infinite;
+        }
+
+        .converter-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px #00ffff;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1em;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-background"></div>
+    <div class="container">
+        <h1>Cosmic Temperature Converter</h1>
+        <div class="converter-box">
+            <input type="number" id="temperature" placeholder="Enter temperature">
+            <select id="unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+            <button onclick="convertTemperature()">Transform!</button>
+            <div class="weather-icon"></div>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const unit = document.getElementById('unit').value;
+            let result, convertedTemp, weatherIcon;
+
+            if (isNaN(temperature)) {
+                document.getElementById('result').innerText = 'Please enter a valid number';
+                document.getElementById('result').style.opacity = 1;
+                return;
+            }
+
+            if (unit === 'celsius') {
+                result = (temperature * 9/5) + 32;
+                convertedTemp = result.toFixed(2) + '°F';
+            } else {
+                result = (temperature - 32) * 5/9;
+                convertedTemp = result.toFixed(2) + '°C';
+            }
+
+            const celsiusTemp = unit === 'celsius' ? temperature : result;
+
+            if (celsiusTemp < 0) {
+                weatherIcon = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
+                document.body.style.background = 'linear-gradient(to bottom, #000080, #4169E1)';
+            } else if (celsiusTemp < 10) {
+                weatherIcon = 'https://cdn-icons-png.flaticon.com/512/1146/1146869.png';
+                document.body.style.background = 'linear-gradient(to bottom, #4682B4, #87CEEB)';
+            } else if (celsiusTemp < 20) {
+                weatherIcon = 'https://cdn-icons-png.flaticon.com/512/414/414927.png';
+                document.body.style.background = 'linear-gradient(to bottom, #20B2AA, #7FFFD4)';
+            } else if (celsiusTemp < 30) {
+                weatherIcon = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
+                document.body.style.background = 'linear-gradient(to bottom, #FF7F50, #FFA07A)';
+            } else {
+                weatherIcon = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
+                document.body.style.background = 'linear-gradient(to bottom, #FF4500, #FF6347)';
+            }
+
+            document.querySelector('.weather-icon').style.backgroundImage = `url('${weatherIcon}')`;
+            document.getElementById('result').innerText = `Cosmic reading: ${convertedTemp}`;
+            document.getElementById('result').style.opacity = 1;
+            document.querySelector('.weather-icon').style.transform = 'scale(1.2) rotate(360deg)';
+            
+            setTimeout(() => {
+                document.querySelector('.weather-icon').style.transform = 'scale(1) rotate(0deg)';
+            }, 500);
+
+            createStars();
+        }
+
+        function createStars() {
+            const container = document.querySelector('.container');
+            const starCount = 50;
+            container.innerHTML = container.innerHTML; // Clear existing stars
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                container.appendChild(star);
+            }
+        }
+
+        createStars();
+    </script>
+</body>
+</html>
