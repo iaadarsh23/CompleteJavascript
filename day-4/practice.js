@@ -44,10 +44,61 @@
 
 function convertLength(length, from, to){
     if(from==='miles'){
-        console.log(`${(length*1.6)} km`);        
-    } else{
-        console.log(`${(length*0.621371)} miles`);
-        
+        convertfrommiles(length, from, to);
     }
-} 
-convertLength(50,'miles', 'km');
+    else if(from==='km'){
+        convertfromkm(length, from, to);
+    }
+    else if(from==='feet'){
+        convertfromfeet(length, from, to);
+    }
+    else{
+        console.log(`Invalid ${to}`);
+    }
+}
+
+convertLength(5,'km','kllufdhfsdkif');
+
+
+
+
+
+
+
+
+
+function convertfromkm(length, from, to){
+    if(to==='miles'){
+        console.log(`${(length*0.621371)} ${to}`);
+        
+    }else if(to==='ft'){
+        console.log(`${(length*3281)} ${to}`);
+        
+    }else{
+        console.log(`Invalid ${to}`);
+    }
+}
+
+function convertfrommiles(length, from, to){
+    if(to==='km'){
+        console.log(`${(length*1.6)} ${to}`);
+        
+    }else if(to==='ft'){
+        console.log(`${(length*5280)} ${to}`);
+        
+    }else{
+        console.log(`Invalid ${to}`);
+    }
+}
+function convertfromfeet(length, from, to){
+    if(to==='km'){
+        console.log(`${(length*0.0003048)} ${to}`);
+        
+    }else if(to==='miles'){
+        console.log(`${(length*0.000189394)} ${to}`);
+        
+    }else{
+        console.log(`Invalid ${to}`);
+    }
+}
+
