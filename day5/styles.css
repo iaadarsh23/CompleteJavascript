@@ -6,6 +6,12 @@
     --color3: #4cc9f0;
     --color4: #f72585;
     --color5: #7209b7;
+    --alert-bg: rgba(0, 0, 0, 0.9);
+    --alert-color: #fff;
+    --alert-border: 2px solid #f72585;
+    --alert-btn-bg: #f72585;
+    --alert-btn-hover: #7209b7;
+    --alert-btn-shadow: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -25,7 +31,6 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    overflow-x: hidden;
 }
 
 @keyframes gradientBG {
@@ -80,7 +85,7 @@ button::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent 30%);
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.5), transparent 30%);
     animation: rotate 4s linear infinite;
 }
 
@@ -100,9 +105,7 @@ button:active {
 .imgs {
     width: 80px;
     height: 80px;
-    transition: transform 0.3s ease;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
-    position: relative;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
     z-index: 1;
 }
 
@@ -116,33 +119,12 @@ button:hover .imgs {
     75% { transform: rotate(15deg); }
 }
 
-button:nth-child(1) { background-color: rgba(247, 37, 133, 0.7); } /* Pink */
-button:nth-child(2) { background-color: rgba(67, 97, 238, 0.7); } /* Blue */
-button:nth-child(3) { background-color: rgba(76, 201, 240, 0.7); } /* Light Blue */
-button:nth-child(4) { background-color: rgba(114, 9, 183, 0.7); } /* Purple */
-
-button:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
 .name-container {
     position: fixed;
     bottom: 20px;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 10px;
 }
 
@@ -151,13 +133,11 @@ button:hover::after {
     font-size: 1.8rem;
     font-weight: 600;
     color: #ffffff;
-    text-align: center;
     padding: 0.5rem 2rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     backdrop-filter: blur(5px);
     letter-spacing: 0.2rem;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -169,7 +149,7 @@ button:hover::after {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent 30%);
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.5), transparent 30%);
     animation: rotate 4s linear infinite;
 }
 
@@ -177,6 +157,62 @@ button:hover::after {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.3rem;
+}
+
+/* Alert Box Styles */
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--alert-bg);
+    color: var(--alert-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+    width: 300px;
+    border: var(--alert-border);
+    box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.alert-box.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.alert-box.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* Updated Close Button Styles */
+.close-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--alert-btn-bg);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px var(--alert-btn-shadow);
+}
+
+.close-btn:hover {
+    background-color: var(--alert-btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--alert-btn-shadow);
+}
+
+.close-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px var(--alert-btn-shadow);
 }
 
 @media (max-width: 768px) {
