@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game using functions</title>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
     <h1>ROCK PAPER SCISSORS</h1>
+    <div class="name">ADARSH TRIPATHI</div> 
 
     <!-- Wrapped the buttons in a div with class 'box' -->
     <div class="box">
@@ -34,6 +35,15 @@
                 
             ">
             <img class="imgs" src="/CompleteJavascript/images/scissors.png" alt="Scissors">
+        </button>
+
+
+        <button 
+            onclick="
+                playgame();
+                
+            ">
+            <img class="imgs" src="/CompleteJavascript/images/reboot.png" alt="Scissors">
         </button>
     </div>
 

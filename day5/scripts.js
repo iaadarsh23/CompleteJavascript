@@ -1,3 +1,9 @@
+const score={
+    wins:0,
+    losses:0,
+    ties:0
+}
+
 function playgame(playermove){
     const computerchoice= pickcomputerchoice();// global varible it avoids naming conflicts
 
@@ -10,7 +16,7 @@ function playgame(playermove){
                     } else {
                         result = 'You win';
                     }
-                    alert(`You have picked ${playermove}. Computer picked hce}. ${result}`);
+                   
 
                 }
 
@@ -22,7 +28,7 @@ function playgame(playermove){
                     } else {
                         result = 'You lose';
                     }
-                    alert(`You have picked ${playermove}. Computer picked ${computerchoice}. ${result}`);
+                    
                 }
 
                 else if(playermove==='scissor'){
@@ -33,8 +39,33 @@ function playgame(playermove){
                     } else {
                         result = 'tie';
                     }
-                    alert(`You have picked ${playermove}. Computer picked ${computerchoice}. ${result}`);
+
+
+                    
                 }
+
+                else{
+                    alert('Your score is reseted');
+                    score.wins=0,
+                    score.losses=0,
+                    score.ties=0;
+                    
+                }
+                if(result==='You win'){
+                    score.wins+=1;
+                }else if(result==='You lose'){
+                    score.losses+=1;
+                }
+                else if(result==='tie'){
+                    score.ties+=1;
+                }
+                
+
+
+
+                alert(`You have picked ${playermove}. Computer picked ${computerchoice}. ${result}
+wins: ${score.wins}, losses: ${score.losses}, tie: ${score.ties}`);
+
                 
             
 }
