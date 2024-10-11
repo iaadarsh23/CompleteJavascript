@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap');
 
 :root {
     --color1: #3a0ca3;
@@ -21,10 +21,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 @keyframes gradientBG {
@@ -34,43 +35,66 @@ body {
 }
 
 h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4rem;
+    font-family: 'Bangers', cursive;
+    font-size: 5rem;
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px var(--color4), 6px 6px 0px var(--color5);
     letter-spacing: 0.5rem;
-    background: linear-gradient(to right, var(--color3), var(--color4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.3));
+    transform: rotate(-3deg);
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
 }
 
 .box {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin: 2rem 0;
 }
 
 button {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent 30%);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
 }
 
 button:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.1);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: var(--color3);
 }
 
 button:active {
-    transform: translateY(2px);
+    transform: scale(0.95);
 }
 
 .imgs {
@@ -78,36 +102,86 @@ button:active {
     height: 80px;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+    position: relative;
+    z-index: 1;
 }
 
 button:hover .imgs {
-    transform: scale(1.1) rotate(10deg);
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+button:nth-child(1) { background-color: rgba(247, 37, 133, 0.7); } /* Pink */
+button:nth-child(2) { background-color: rgba(67, 97, 238, 0.7); } /* Blue */
+button:nth-child(3) { background-color: rgba(76, 201, 240, 0.7); } /* Light Blue */
+button:nth-child(4) { background-color: rgba(114, 9, 183, 0.7); } /* Purple */
+
+button:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.name-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
 .name {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 1rem;
     padding: 0.5rem 2rem;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    border-radius: 50px;
     backdrop-filter: blur(5px);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.name::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent 30%);
+    animation: rotate 4s linear infinite;
 }
 
 .name:hover {
-    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3rem;
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
     .box {
@@ -115,7 +189,8 @@ button:hover .imgs {
     }
     
     button {
-        padding: 1rem;
+        width: 120px;
+        height: 120px;
     }
     
     .imgs {
@@ -124,6 +199,6 @@ button:hover .imgs {
     }
 
     .name {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }

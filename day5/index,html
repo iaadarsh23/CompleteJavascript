@@ -10,40 +10,23 @@
 </head>
 <body>
     <h1>ROCK PAPER SCISSORS</h1>
-    <div class="name">ADARSH TRIPATHI</div> 
+    <div class="name-container">
+        <div class="name">ADARSH TRIPATHI</div>
+      </div>
 
     <!-- Wrapped the buttons in a div with class 'box' -->
     <div class="box">
-        <button  
-            onclick=" 
-                playgame('Rock');
-
-            ">
+        <button data-tooltip="Rock">
             <img class="imgs" src="/CompleteJavascript/images/fist.png" alt="Rock">
         </button>
-
-        <button 
-            onclick="
-                playgame('paper');
-            ">
+        <button data-tooltip="Paper">
             <img class="imgs" src="/CompleteJavascript/images/hand-paper.png" alt="Paper">
         </button>
-
-        <button 
-            onclick="
-                playgame('scissor');
-                
-            ">
+        <button data-tooltip="Scissors">
             <img class="imgs" src="/CompleteJavascript/images/scissors.png" alt="Scissors">
         </button>
-
-
-        <button 
-            onclick="
-                playgame();
-                
-            ">
-            <img class="imgs" src="/CompleteJavascript/images/reboot.png" alt="Scissors">
+        <button data-tooltip="Reset">
+            <img class="imgs" src="/CompleteJavascript/images/reboot.png" alt="Reset">
         </button>
     </div>
 
