@@ -1,8 +1,8 @@
-const score = {
+const score = JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
     losses: 0,
-    ties: 0
-}
+    ties:0 
+};
 
 function playgame(playermove) {
     const computerchoice = pickcomputerchoice(); // Computer's random move
@@ -41,6 +41,8 @@ function playgame(playermove) {
     } else if (result === 'tie') {
         score.ties += 1;
     }
+    //score will be stored permanently even after refreshing;
+    localStorage.setItem('score', JSON.stringify(score));
 
     const message = `You picked ${playermove}. Computer picked ${computerchoice}. ${result}.
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
@@ -86,5 +88,8 @@ function resetGame() {
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    localStorage.setItem('score', JSON.stringify(score));
+
     showAlert("Game Reset! All scores set to 0.");
+
 }
