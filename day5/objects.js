@@ -1,25 +1,62 @@
-//object creation
+// //object creation
 
-const student ={
-    name: 'Adarsh',
-    branch: 'Aiml',
-    rollno: 11
+// const student ={
+//     name: 'Adarsh',
+//     branch: 'Aiml',
+//     rollno: 11
+// }
+// console.log(student);
+// console.log(student.name);
+
+// //updating the value
+// student.name='Akanksha';
+// console.log(student.name);
+// console.log(student);
+
+// //adding the new property
+
+// student.newproperty= 'section';
+// console.log(student);
+
+
+// //deleting the property
+
+// delete student.newproperty;
+// console.log(student  );
+
+//bracket notation
+/*const product2={
+    name: 'adarsh',
+    ['dilevery-adress']: 2515
 }
-console.log(student);
-console.log(student.name);
+console.log(product2['name']);
+console.log(product2["dilevery-adress"]);
 
-//updating the value
-student.name='Akanksha';
-console.log(student.name);
-console.log(student);
+*/
 
-//adding the new property
+//nested objects
 
-student.newproperty= 'section';
-console.log(student);
+/* const product3={
+    name: 'socks',
+    ratings: {
+        stars: 4.5,
+        count: 87,
+        people:{
+            views: '1 lakh',
+            engagement: 1000
+        }
+    }
+}
+console.log(product3.ratings.count);
+console.log(product3.ratings.people.engagement);
 
+*/
 
-//deleting the property
+//functions in objects is called the methods
 
-delete student.newproperty;
-console.log(student  );
+const product4={
+    sum: function add(num1, nums2){
+       console.log(num1**nums2);
+    }
+}
+product4.sum(4,5);
