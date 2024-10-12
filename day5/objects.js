@@ -55,8 +55,34 @@ console.log(product3.ratings.people.engagement);
 //functions in objects is called the methods
 
 const product4={
+    name:'adarsh',
+    section: 5,
+    branch: 'AIML',
     sum: function add(num1, nums2){
        console.log(num1**nums2);
     }
 }
 product4.sum(4,5);
+
+//builtin objects
+
+    //json objects
+
+    //1.this will convert js objects to json
+        /*const obtojson= JSON.stringify(product4);
+        console.log(obtojson);
+        //this will not include functions and all the properties will be in double quotes
+
+        //2. json to objects conversion
+
+        console.log(JSON.parse(obtojson));
+        */
+    //    
+
+    //localStorage
+
+    localStorage.setItem('message','hello');
+    console.log(localStorage.getItem('message'));
+    console.log(1+2);
+    
+    
