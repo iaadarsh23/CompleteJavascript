@@ -1,4 +1,5 @@
 const score = JSON.parse(localStorage.getItem('score')) || {
+    // adding this or statement because it will return these values when the json parse return null         
     wins: 0,
     losses: 0,
     ties:0 
