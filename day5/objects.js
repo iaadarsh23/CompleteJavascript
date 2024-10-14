@@ -112,6 +112,10 @@ console.log(product3.ratings.people.engagement);
         console.log(basketball);
         basketball.price+=500;
         console.log(basketball.price);
+
+        basketball['delivery-time']= '3 days';
+        console.log(basketball);
+        
         
         
     
