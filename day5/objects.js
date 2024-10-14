@@ -54,15 +54,15 @@ console.log(product3.ratings.people.engagement);
 
 //functions in objects is called the methods
 
-const product4={
-    name:'adarsh',
-    section: 5,
-    branch: 'AIML',
-    sum: function add(num1, nums2){
-       console.log(num1**nums2);
-    }
-}
-product4.sum(4,5);
+// const product4={
+//     name:'adarsh',
+//     section: 5,
+//     branch: 'AIML',
+//     sum: function add(num1, nums2){
+//        console.log(num1**nums2);
+//     }
+// }
+// product4.sum(4,5);
 
 //builtin objects
 
@@ -81,8 +81,37 @@ product4.sum(4,5);
 
     //localStorage
 
-    localStorage.setItem('message','hello');
-    console.log(localStorage.getItem('message'));
-    console.log(1+2);
+    // localStorage.setItem('message','hello');
+    // console.log(localStorage.getItem('message'));
+    // console.log(1+2);
+
+    //short hand property 
+    //  const obj= {
+    //     sum(num1,nums2){
+    //         const sum= num1+nums2;
+    //         return sum;
+    //     }
+    //  }
     
+    //  console.log(obj.sum(4,5));
+
+    //  const obj2={
+    //     mul(sum,num3){
+    //         const multi= sum* num3;
+    //         return multi;
+    //     }
+    //  }
+    //  console.log(obj2.mul(sum,6))
+
+    //excercises
+        const basketball={
+            size: 45,
+            price: 2095
+
+        }
+        console.log(basketball);
+        basketball.price+=500;
+        console.log(basketball.price);
+        
+        
     
