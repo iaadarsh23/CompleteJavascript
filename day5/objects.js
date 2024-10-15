@@ -106,7 +106,11 @@ console.log(product3.ratings.people.engagement);
     //excercises
         const basketball={
             size: 45,
-            price: 2095
+            price: 2095,
+            
+                console.log(this.compareprice)
+            
+            }
 
         }
         console.log(basketball);
@@ -115,6 +119,7 @@ console.log(product3.ratings.people.engagement);
 
         basketball['delivery-time']= '3 days';
         console.log(basketball);
+
         
         
         
