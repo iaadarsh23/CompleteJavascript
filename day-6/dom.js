@@ -1,11 +1,21 @@
-console.log(document.title);
-document.title= 'dom manipulation';
-console.log(document.title);
+function subscribe(){
+    const buttonElement= document.querySelector('.bt');
+    if(buttonElement.innerHTML==='Subscribe'){
+        buttonElement.innerHTML='Subscribed';
 
+        displayConfetti();
 
-console.log(document.body);
-// document.body.innerHTML= '<button> hello </button>';
-console.log(document.body.innerHTML);
-console.log(document.body.innerHTML);
-console.log(document.body.innerHTML);
+    }else{
+        buttonElement.innerHTML='Subscribe';
+    }   
+}
 
+function displayConfetti() {
+    const confetti = document.getElementById('confetti');
+    confetti.classList.add('show'); // Add class to display confetti
+    
+    // Remove the confetti after 3 seconds (or however long you want the celebration)
+    setTimeout(() => {
+        confetti.classList.remove('show');
+    }, 3000);
+}
