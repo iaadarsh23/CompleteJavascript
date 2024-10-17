@@ -22,7 +22,7 @@ function playgame(playermove) {
         if (computerchoice === 'Rock') {
             result = 'You win';
         } else if (computerchoice === 'Paper') {
-            result = 'tie';
+            result = 'Tie';
         } else {
             result = 'You lose';
         }
@@ -47,11 +47,12 @@ function playgame(playermove) {
     localStorage.setItem('score', JSON.stringify(score));
 
     updatescoreElement();
+
     document.querySelector('.js-result')
         .innerHTML= `${result}`;
 
     document.querySelector('.js-moves')
-        .innerHTML= `You picked ${playermove}. Computer picked ${computerchoice}.`;
+        .innerHTML= `You picked ${playermove}.  Computer picked ${computerchoice}.`;
 
     
     
@@ -61,7 +62,7 @@ function playgame(playermove) {
 
 function updatescoreElement(){
     document.querySelector('.js-score')
-        .innerHTML= `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        .innerHTML= `Wins: ${score.wins} | Losses: ${score.losses} | Ties: ${score.ties}`;
 }
 
 
@@ -84,6 +85,15 @@ function resetGame() {
     localStorage.setItem('score', JSON.stringify(score));
     
     updatescoreElement();
+
+    document.querySelector('.js-result').innerHTML = '';
+    
+   
+    document.querySelector('.js-moves').innerHTML = '';
+    
+
+    document.querySelector('.js-moves')
+        .innerHTML= `You picked ${playermove}.  Computer picked ${computerchoice}.`;
 
     window.alert("Game Reset! All scores set to 0.");
 }

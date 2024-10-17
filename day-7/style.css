@@ -160,6 +160,24 @@ button:hover .imgs {
     font-size: 50px;
     margin: 2rem;
     letter-spacing: 1rem;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.js-moves{
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin: 1rem;
+    color: rgb(255, 191, 108);
+    font-weight: 600;
+    
+}
+.js-score{
+    font-size: 50px;
+    margin: 1rem;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1rem;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
