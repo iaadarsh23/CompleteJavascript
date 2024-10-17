@@ -51,6 +51,8 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
 function pickcomputerchoice() {
+    
+    const randomnumber = Math.floor(Math.random() * 3);
     const randomnumber = Math.floor(Math.random() * 3);
     if (randomnumber === 0) {
         return 'Rock';
