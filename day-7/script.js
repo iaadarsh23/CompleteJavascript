@@ -4,6 +4,8 @@ const score = JSON.parse(localStorage.getItem('score')) || {
     ties: 0 
 };
 
+updatescoreElement();
+
 function playgame(playermove) {
     const computerchoice = pickcomputerchoice(); 
     let result = '';
@@ -44,16 +46,28 @@ function playgame(playermove) {
 
     localStorage.setItem('score', JSON.stringify(score));
 
-    const message = `You picked ${playermove}. Computer picked ${computerchoice}. ${result}.
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    updatescoreElement();
+    document.querySelector('.js-result')
+        .innerHTML= `${result}`;
 
-    window.alert(message);  // Keeping default alert functionality here
+    document.querySelector('.js-moves')
+        .innerHTML= `You picked ${playermove}. Computer picked ${computerchoice}.`;
+
+    
+    
+
+    
 }
 
+function updatescoreElement(){
+    document.querySelector('.js-score')
+        .innerHTML= `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
+
+
 function pickcomputerchoice() {
+    const randomnumber = Math.floor(Math.random() * 3);
     
-    const randomnumber = Math.floor(Math.random() * 3);
-    const randomnumber = Math.floor(Math.random() * 3);
     if (randomnumber === 0) {
         return 'Rock';
     } else if (randomnumber === 1) {
@@ -69,5 +83,7 @@ function resetGame() {
     score.ties = 0;
     localStorage.setItem('score', JSON.stringify(score));
     
+    updatescoreElement();
+
     window.alert("Game Reset! All scores set to 0.");
 }
