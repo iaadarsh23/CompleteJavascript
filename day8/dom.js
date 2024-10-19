@@ -26,6 +26,7 @@ const newElemetAdded=content.appendChild(addNewElement);
 
 
 newElemetAdded.innerHTML= 'new bt '
+newElemetAdded
 console.log(newElemetAdded.innerHTML);
 newElemetAdded.outerHTML= '<a href= "www.google.com" class="nc">link</a>'
 
