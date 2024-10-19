@@ -22,5 +22,12 @@ const content= document.querySelector('.js-h1');
 console.log(content);
 
 const addNewElement= document.createElement('button');
-content.appendChild(addNewElement)
+const newElemetAdded=content.appendChild(addNewElement);
+
+
+newElemetAdded.innerHTML= 'new bt class="nc"'
+console.log(newElemetAdded.innerHTML);
+
+
+
 
