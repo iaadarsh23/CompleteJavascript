@@ -25,8 +25,9 @@ const addNewElement= document.createElement('button');
 const newElemetAdded=content.appendChild(addNewElement);
 
 
-newElemetAdded.innerHTML= 'new bt class="nc"'
+newElemetAdded.innerHTML= 'new bt '
 console.log(newElemetAdded.innerHTML);
+newElemetAdded.outerHTML= '<a href= "www.google.com" class="nc">link</a>'
 
 
 
