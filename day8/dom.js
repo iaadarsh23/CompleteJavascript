@@ -23,7 +23,6 @@ console.log(content);
 
 const addNewElement= document.createElement('button');
 const newElemetAdded=content.appendChild(addNewElement);
-const newElemetAdded=content.appendChild(addNewElement);
 
 
 newElemetAdded.innerHTML= 'new bt '
@@ -35,7 +34,7 @@ const adding= document.querySelector('h2');
 const newpara= document.createElement('p');
 newpara.textContent= 'hii Iam the new text added';
 console.log(adding.appendChild(newpara));
-
+//
 
 
 
