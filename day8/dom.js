@@ -23,6 +23,7 @@ console.log(content);
 
 const addNewElement= document.createElement('button');
 const newElemetAdded=content.appendChild(addNewElement);
+const newElemetAdded=content.appendChild(addNewElement);
 
 
 newElemetAdded.innerHTML= 'new bt '
