@@ -17,24 +17,24 @@
 
 //adding new element
 
-const content= document.querySelector('.js-h1'); 
+// const content= document.querySelector('.js-h1'); 
 
-console.log(content);
+// console.log(content);
 
-const addNewElement= document.createElement('button');
-const newElemetAdded=content.appendChild(addNewElement);
+// const addNewElement= document.createElement('button');
+// const newElemetAdded=content.appendChild(addNewElement);
 
 
-newElemetAdded.innerHTML= 'new bt '
-newElemetAdded
-console.log(newElemetAdded.innerHTML);
-newElemetAdded.outerHTML= '<a href= "www.google.com" class="nc">link</a>'
+// newElemetAdded.innerHTML= 'new bt '
+// newElemetAdded
+// console.log(newElemetAdded.innerHTML);
+// newElemetAdded.outerHTML= '<a href= "www.google.com" class="nc">link</a>'
 
-const adding= document.querySelector('h2');
-const newpara= document.createElement('p');
-newpara.textContent= 'hii Iam the new text added';
-console.log(adding.appendChild(newpara));
-//
+// const adding= document.querySelector('h2');
+// const newpara= document.createElement('p');
+// newpara.textContent= 'hii Iam the new text added';
+// console.log(adding.appendChild(newpara));
+// //
 
 
 
