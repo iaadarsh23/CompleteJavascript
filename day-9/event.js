@@ -6,3 +6,4 @@ for(let i= 0; i<select.length; i++){
 function colorchanged(event) {
     event.target.style.color = 'red';
 }
+
