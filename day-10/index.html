@@ -8,8 +8,35 @@
 <body>
     <div class="container">
         <h1 class="js-h1">currency convertor</h1>
-        <input type="text" class="js-int">
+        <label for="from-currency">From:</label>
+        <select id="from-currency">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="JPY">JPY</option>
+            
+        </select>
+
+        <label for="TO-currency">TO:</label>
+        <select id="to-currency">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="JPY">JPY</option>
+        </select>
+
+        <input type="text" class="js-from" placeholder="Enter the amount">
+        <button class="js-convert-btn">Convert</button>
+        
+        <!-- readonly present the user to edit the amount directly -->
+        <input type="text" class="js-to" placeholder="Converted amount" readonly>
         <p class="js-p">Result</p>
+
+
+
+
     </div>
 </body>
 <script src="app.js"></script>
