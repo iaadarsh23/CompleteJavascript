@@ -6,6 +6,6 @@ for(let i=0;i<100;i++){
     newPara.addEventListener('click',function(event){
         console.log('happy diwali')
     })
-    newDiv.appendChild(newPara)
 }
+newDiv.appendChild(newPara)
 document.body.appendChild(newDiv);
