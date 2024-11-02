@@ -13,19 +13,23 @@
 // let t2= performance.now()
 // console.log('this took ' + (t2-t1) + "ms");
 
-
-const userInput= document.querySelector('js-int')
-
-
-
-
+let t1= performance.now()
+const userInput= document.querySelector('.js-int');
+const btn= document.querySelector('.js-bt');
+const result= document.querySelector('.js-p'); 
+btn.addEventListener('click', tables);
 
 
 function tables(event){
+
+    result.innerHTML='';
+    let number= parseInt(userInput.value)
     for(let i=1;i<=10;i++){
-        let table= n*i;
-        console.log(table)
+        let results= number * i;
+        result.innerHTML += `The multiplication table of ${number} is ${number} x ${i} = ${results} <br>`;
+        
     }
 }
-    
+let t2 = performance.now()
+console.log(t2-t1)    
 
