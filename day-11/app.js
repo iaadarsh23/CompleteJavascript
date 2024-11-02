@@ -13,7 +13,7 @@
 // let t2= performance.now()
 // console.log('this took ' + (t2-t1) + "ms");
 
-const fragment= document.createDocumentFragment();
+
 let t1= performance.now()
 const userInput= document.querySelector('.js-int');
 const btn= document.querySelector('.js-bt');
@@ -24,14 +24,17 @@ btn.addEventListener('click', tables);
 function tables(event){
     result.innerHTML='';
     let number= parseInt(userInput.value)
+
+    const fragment= document.createDocumentFragment();
     for(let i=1;i<=10;i++){
         let results= number * i;
-        result.innerHTML += `The multiplication table of ${number} is ${number} x ${i} = ${results} <br>`;
+        let line= document.createElement('div')
         
+        line.innerHTML += `The multiplication table of ${number} is ${number} x ${i} = ${results} <br>`;
+        fragment.appendChild(line);
     }
-    fragment.appendChild(result);
+    result.appendChild(fragment) // 1 reflow and 1 repaint   
 }
-document.body.appendChild(fragment) 
 let t2 = performance.now()
 console.log(t2-t1)    
 
