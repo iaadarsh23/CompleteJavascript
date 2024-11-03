@@ -1,0 +1,1 @@
+setTimeout(()=> alert('hell0o'),6000)
