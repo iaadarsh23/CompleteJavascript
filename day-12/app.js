@@ -5,15 +5,19 @@
 // }
 // let interval= setInterval(clock,1000);
 
-const userInput= document.getElementById('Set').value; 
 const start= document.getElementById('start'); 
 const stop= document.getElementById('stop');
 const result= document.getElementById('show-time') 
-start.addEventListener('click',stopWatch);  
-function stopWatch(){
-    for(let i=userInput;i>=0;i--){
-        result.innerText=i;
-    }
+start.addEventListener('click',stopWatch); 
+
+let interval;
+
+let countdown= parseInt(document.getElementById('Set').value,10)
+
+if(isNaN(countdown)||countdown<=0){
+    result.innerHTML='Please enter a valid  postive number';
 }
 
-let interval= setInterval(stopWatch,1000)
+result.innerHTML=countdown;
+
+interval= setInterval()
