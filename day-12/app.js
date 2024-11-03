@@ -10,6 +10,7 @@ const stop= document.getElementById('stop');
 const result= document.getElementById('show-time') 
 start.addEventListener('click',stopWatch); 
 
+
 function stopWatch(){
     let interval;
     clearInterval(interval);
@@ -24,7 +25,19 @@ function stopWatch(){
     interval= setInterval(()=>{
         countdown--
         result.innerHTML=countdown;
+
+        if(countdown<=0){
+            clearInterval(interval);
+            result.innerHTML='Times Up!';
+        }
     },1000);
+
+    function stopp(){
+        clearInterval(interval);
+    }
+    stop.addEventListener('click',stopp)
+
+    
 }
 
 
