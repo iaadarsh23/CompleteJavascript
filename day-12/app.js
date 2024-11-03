@@ -10,14 +10,21 @@ const stop= document.getElementById('stop');
 const result= document.getElementById('show-time') 
 start.addEventListener('click',stopWatch); 
 
-let interval;
+function stopWatch(){
+    let interval;
+    clearInterval(interval);
+    let countdown= parseInt(document.getElementById('Set').value,10)
 
-let countdown= parseInt(document.getElementById('Set').value,10)
+    if(isNaN(countdown)||countdown<=0){
+        result.innerHTML='Please enter a valid  postive number';
+    }
 
-if(isNaN(countdown)||countdown<=0){
-    result.innerHTML='Please enter a valid  postive number';
+    result.innerHTML=countdown;
+
+    interval= setInterval(()=>{
+        countdown--
+        result.innerHTML=countdown;
+    },1000);
 }
 
-result.innerHTML=countdown;
 
-interval= setInterval()
