@@ -29,39 +29,56 @@
 
 // promises one after another
 
-const iceCream= new Promise((resolve, reject)=>{
+// const iceCream= new Promise((resolve, reject)=>{
     
-    const btn= document.createElement('button');
-        btn.innerText='ice cream';
-        btn.addEventListener('click',()=>{
-            console.log('kya khayega?')
-            setTimeout(()=>{
-                const heading1=document.createElement('h1');
-                heading1.innerText='kuch bhi ';
-                document.body.appendChild(heading1);
-            },5000)
-        })
-        document.body.appendChild(btn);
-        resolve('khila di ')
-} )
+//     const btn= document.createElement('button');
+//         btn.innerText='ice cream';
+//         btn.addEventListener('click',()=>{
+//             console.log('kya khayega?')
+//             setTimeout(()=>{
+//                 const heading1=document.createElement('h1');
+//                 heading1.innerText='kuch bhi ';
+//                 document.body.appendChild(heading1);
+//             },5000)
+//         })
+//         document.body.appendChild(btn);
+//         resolve('khila di ')
+// } )
 
-const sec=iceCream.then(()=>{
-    const new2= new Promise((resolve, reject)=>{
-        const btn2= document.createElement('button');
-        btn2.innerText=' samose khayega?';
+// const sec=iceCream.then(()=>{
+//     const new2= new Promise((resolve, reject)=>{
+//         const btn2= document.createElement('button');
+//         btn2.innerText=' samose khayega?';
         
-        btn2.addEventListener('click',()=>{
-            setTimeout(()=>{
-                const heading=document.createElement('h1');
-                heading.innerText='ha khila do me toh kha lunga';
+//         btn2.addEventListener('click',()=>{
+//             setTimeout(()=>{
+//                 const heading=document.createElement('h1');
+//                 heading.innerText='ha khila do me toh kha lunga';
                 
-                document.body.appendChild(heading);
-            },3000)
-        })
-        resolve('ho gya')
-        document.body.appendChild(btn2);
-    })
-  return new2
-})
+//                 document.body.appendChild(heading);
+//             },3000)
+//         })
+//         resolve('ho gya')
+//         document.body.appendChild(btn2);
+//     })
+//   return new2
+// })
 
-sec.then((value)=> console.log(value));
+// sec.then((value)=> console.log(value));
+
+
+
+
+//Async and await
+
+async function getWeatherAndNews(){
+    try{
+        const getWeather= await fetch('heere we will add a url')
+        const getnews= await fetch('heere we will add a url')
+        console.log(getWeather,getnews)
+    }
+    catch(error){
+        console.error('there is an error')
+
+    }
+}
