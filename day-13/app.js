@@ -21,5 +21,8 @@ const secPromise= new Promise((resolve, reject)=>{
         },5000)
     })
     document.body.appendChild(btn);
-    reject(new Error('yeh nhin hoga pass'))
+    resolve('ho gya bhaiya')
 })
+secPromise.then((value)=>{
+    console.log(2+3)
+});
