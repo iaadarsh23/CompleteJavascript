@@ -45,7 +45,7 @@ const iceCream= new Promise((resolve, reject)=>{
         resolve('khila di ')
 } )
 
-iceCream.then(()=>{
+const sec=iceCream.then(()=>{
     const new2= new Promise((resolve, reject)=>{
         const btn2= document.createElement('button');
         btn2.innerText=' samose khayega?';
@@ -61,6 +61,7 @@ iceCream.then(()=>{
         resolve('ho gya')
         document.body.appendChild(btn2);
     })
-    
-  
+  return new2
 })
+
+sec.then((value)=> console.log(value));
