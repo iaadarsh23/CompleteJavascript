@@ -17,20 +17,45 @@
 
 //q2
 
-async function fetchUserData(){
-    try {
-        const response= await fetch('https://jsonplaceholder.typicode.com/users')
-        if(!response.ok){
-            throw new Error('network is not ok');
-        }
-        const users= await response.json();
-        users.forEach(user => console.log(user.name)
+// async function fetchUserData(){
+//     try {
+//         const response= await fetch('https://jsonplaceholder.typicode.com/users')
+//         if(!response.ok){
+//             throw new Error('network is not ok');
+//         }
+//         const users= await response.json();
+//         users.forEach(user => console.log(user.name)
             
-        );
+//         );
 
 
 
-    } catch (error) {
-        console.error('there is a  error', error)
+//     } catch (error) {
+//         console.error('there is a  error', error)
+//     }
+// }
+
+// q3
+//  async function fetchPost() {
+//      const response= await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//      if(!response.ok){
+//         throw new Error('network is not ok')
+
+//      }
+//      const title1= await response.json()
+//      console.log(title1.title)
+//  }
+
+//q4
+
+ 
+async function fetchTodos() {
+    const response= await fetch('https://jsonplaceholder.typicode.com/todos')
+    if(!response.ok){
+        throw new Error('network is not ok')
     }
+    const todos= await response.json();
+   //using the filter 
+   const completedTodo= todos.filter(todo=> todo.completed)
+   console.log(completedTodo);   
 }
