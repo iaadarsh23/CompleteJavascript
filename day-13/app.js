@@ -70,15 +70,17 @@
 
 
 //Async and await
+const newPromise= new Promise((resolve, reject)=>{
 
-async function getWeatherAndNews(){
-    try{
-        const getWeather= await fetch('heere we will add a url')
-        const getnews= await fetch('heere we will add a url')
-        console.log(getWeather,getnews)
-    }
-    catch(error){
-        console.error('there is an error')
 
+    async  function getWeatherAndNews(){
+        const [weatherdata, newsdata]= await Promise.all([
+            fetch('url'),
+            fetch('url2')
+        ])
+
+        const [wdata, ndata]= await [weatherdata, newsdata].json();
+        console.log(wdata,ndata)
     }
-}
+
+})
