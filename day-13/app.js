@@ -70,17 +70,20 @@
 
 
 //Async and await
-const newPromise= new Promise((resolve, reject)=>{
+    // const newPromise= new Promise((resolve, reject)=>{
 
 
-    async  function getWeatherAndNews(){
-        const [weatherdata, newsdata]= await Promise.all([
-            fetch('url'),
-            fetch('url2')
-        ])
+    //     async  function getWeatherAndNews(){
+    //         const [weatherdata, newsdata]= await Promise.all([
+    //             fetch('url'),
+    //             fetch('url2')
+    //         ])
 
-        const [wdata, ndata]= await [weatherdata, newsdata].json();
-        console.log(wdata,ndata)
-    }
+    //         const [wdata, ndata]= await [weatherdata, newsdata].json();
+    //         console.log(wdata,ndata)
+    //     }
+    //     resolve('ho gya')
 
-})
+    // })
+
+    // fetch api
