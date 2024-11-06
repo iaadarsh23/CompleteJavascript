@@ -46,16 +46,46 @@
 //      console.log(title1.title)
 //  }
 
-//q4
+// //q4
 
  
-async function fetchTodos() {
-    const response= await fetch('https://jsonplaceholder.typicode.com/todos')
-    if(!response.ok){
-        throw new Error('network is not ok')
+// async function fetchTodos() {
+//     const response= await fetch('https://jsonplaceholder.typicode.com/todos')
+//     if(!response.ok){
+//         throw new Error('network is not ok')
+//     }
+//     const todos= await response.json();
+//    //using the filter 
+//    const completedTodo= todos.filter(todo=> todo.completed)
+//    console.log(completedTodo);   
+// }
+
+//post call
+
+async function postTest() {
+    try {
+        let response= await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+              title: 'Adarsh',
+              body: 'Adarsh is a handsome young smart boi',
+              userId: 23,
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+
+         if(!response.ok){
+            throw new Error('network is not fine')
+         } 
+         let result= await response.json()
+
+         console.log(result)
+    } catch (error) {
+        console.error('there is a error')
+        
     }
-    const todos= await response.json();
-   //using the filter 
-   const completedTodo= todos.filter(todo=> todo.completed)
-   console.log(completedTodo);   
+    
 }
+postTest()
