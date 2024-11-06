@@ -1,7 +1,7 @@
 const x = ()=>{
     let name= 'adarsh';
     const y= ()=>{
-        name= 'sonu'
+        let name= 'sonu';
         console.log(name)
     }
     //means we are returning the y function in another variable outsidè  the scope
