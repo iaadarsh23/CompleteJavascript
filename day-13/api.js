@@ -86,6 +86,5 @@ async function postTest() {
         console.error('there is a error')
         
     }
-    
 }
 postTest()
