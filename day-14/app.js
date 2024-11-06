@@ -14,19 +14,29 @@
 // z();
 
 //case-2
+//here we are making three nested fns and testing whetther we can access variables of outermost fn through inner most fn - ans is yes.
+// const a= ()=>{
+//     let name= 'adarsh';
+//     const b= ()=>{
+//         let naam='sonu';
+//         const c= ()=>{
+//             console.log(name,naam);
+//         }
+//          c();
+//     }
+//     return b;
+// }
+// const z= a();
+// z();
 
-const a= ()=>{
-    let name= 'adarsh';
-    const b= ()=>{
-        let naam='sonu';
-        const c= ()=>{
-            console.log(name,naam);
-        }
-        return c;
+function test() {
+    console.log(a);
+    console.log(foo());
+    
+   let a = 1;
+    function foo() {
+       return 2;
     }
-    return b;
-}
-
-const z= a();
-console.log(z)
-z();
+ }
+ 
+ test();
