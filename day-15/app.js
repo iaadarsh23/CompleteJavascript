@@ -15,6 +15,7 @@ function testing(){
     const newElement= document.createElement('button');
     newElement.innerText='click me';
     document.body.appendChild(newElement);
+    //this another function creats a closure with anotheer function 
     newElement.addEventListener('click',()=>{
         console.log('jai mata di' , count++);
     });
