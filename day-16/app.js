@@ -26,7 +26,6 @@ function toDo(){
             const newList = document.createElement('li');
             newList.textContent=dataArray[i];
             result.appendChild(newList);
-
         
         }
     }
