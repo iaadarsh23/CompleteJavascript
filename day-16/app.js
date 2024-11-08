@@ -9,7 +9,7 @@ function toDo(){
     addTaskbtn.addEventListener('click', adding);
     delTaskbtn.addEventListener('click',deleted)
  
-    function adding(){
+    function adding(){3
         dataArray.push(userInput.value);
         renderList();
         userInput.value='';
