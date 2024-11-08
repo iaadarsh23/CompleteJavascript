@@ -9,15 +9,13 @@ function toDo(){
     delTaskbtn.addEventListener('click',deleted)
     function adding(){
         dataArray.push(userInput.value);
-        result.innerHTML=dataArray;
-         
+        result.innerHTML=dataArray; 
+        dataArray.value=''    
     }
-    
     function deleted(){
         dataArray.pop(userInput.value);
         result.innerHTML=dataArray;
          
     }
 }
-
 toDo();
